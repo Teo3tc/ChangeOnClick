@@ -22,6 +22,11 @@
 </script>
 
 <style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
   .box {
     width: 100vw;
     height: 100vh;
@@ -55,8 +60,12 @@
       <div class="text_desc" />
     </div>
     <div class="box_btn">
-      {#each newt as { id }}
-        <div class="btn" on:click={handleClick} {id} />
+      {#each newt as { id, color }}
+        <div
+          class="btn"
+          style="background-color:{color}"
+          on:click={handleClick}
+          {id} />
       {/each}
     </div>
   </div>
